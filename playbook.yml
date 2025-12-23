@@ -1,0 +1,16 @@
+---
+ - name: First ansible project - install apache
+   hosts: local
+   tasks:
+       - name: Install httpd
+         ansible.builtin.dnf:
+            name: httpd
+            state: present
+
+       - name: start and enable httpd
+         ansible.builtin.service:
+            name: httpd
+            state: started
+            enabled: yes
+
+
